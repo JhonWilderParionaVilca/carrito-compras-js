@@ -1,0 +1,24 @@
+name: 🏗️ build and 🚀 deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Setup node 🏗️
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+      - name: Install and Build 🔧
+        run: |
+          yarn install
+          yarn build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.3
+        with:
+          branch: gh-pages
+          folder: dist

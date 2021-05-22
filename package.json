@@ -1,0 +1,14 @@
+{
+  "name": "plantilla",
+  "private": true,
+  "version": "0.0.0",
+  "homepage": "https://github.com/wilderPariona/_template-vanilla-vite",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "2.3.3"
+  }
+}
