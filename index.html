@@ -5,27 +5,360 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" type="image/svg+xml" href="/carrito-compras-js/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRemplate vite vanilla</title>
+    <title>Carrito compras vanilla js</title>
     <!-- *RESET -->
     
     
-    <!-- *fONTS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
-      rel="stylesheet"
-    />
-    <!-- *PERSONALIZE -->
+    <!-- *skeleton -->
     
     
-    <!-- <link rel="preload" href="src/css/style.css" as="style" />
-    <link rel="stylesheet" href="src/css/style.css" /> -->
-  <script type="module" crossorigin src="/carrito-compras-js/assets/index.0152a8d7.js"></script>
-  <link rel="stylesheet" href="/carrito-compras-js/assets/index.25933101.css">
+    <!-- *custom -->
+    
+    
+  <script type="module" crossorigin src="/carrito-compras-js/assets/index.ec17c270.js"></script>
+  <link rel="stylesheet" href="/carrito-compras-js/assets/index.703c0809.css">
 </head>
   <body>
-    <div id="app"></div>
-    <div class="container">Este es un container</div>
+    <header id="header" class="header">
+      <div class="container">
+        <div class="row">
+          <div class="four columns">
+            <img src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAeAAD/4QNxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzI3NURERDRFOTM3MTFFNzkwRTk4OTRDNzVEM0Y5QTkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzI3NURERDNFOTM3MTFFNzkwRTk4OTRDNzVEM0Y5QTkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU2NzkzODdFNzcyMDY4MTE4MjJBRkVBM0ZFOUM0NjRGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjMwNDk0OUFCMzIyMDY4MTE4MjJBRkVBM0ZFOUM0NjRGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwv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" id="logo" />
+          </div>
+          <div class="two columns u-pull-right">
+            <ul>
+              <li class="submenu">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAcCAYAAADvANYcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDNEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDM0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4K21r8AAABHklEQVR42uyX0RGDIAyGI8cCXcGO4Ap0BDuC7z6xQn1xAEdwBldwBUYoI7SxF+8orQpUrA/mLoegB5/JT8SkLMsWAHL4NI1+Re8gotV1DQxbMXH/NAG3uiUYiQEis8YL9BRdoTeRGRpO4e6+REESyC12JNjEeA8b2q4hFO2Ov0JA7K3pCtEfEHuC0FuBsIX7B8RWEK+U8w0gOqtVht708CnnjpOIGUhNEyvj2kvUvhAXa/FVjDvmLWo5Zw7P5LHrBnMAEMZB547+WMFbH4g00tYUPpoYz5fS6OsfFhakqcpXmJJSMR6AzwEg0nh7YZ9rl9JRGACjLoqAKMi5PoMdGHPQhLZqRsh/SDXX5w6F6mykIFSYFdWYjNq3gvcUYABz8lkjNTPaLgAAAABJRU5ErkJggg==" id="img-carrito" />
+                <div id="carrito">
+                  <table id="lista-carrito" class="u-full-width">
+                    <thead>
+                      <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+
+                  <a href="#" id="vaciar-carrito" class="button u-full-width"
+                    >Vaciar Carrito</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="hero">
+      <div class="container">
+        <div class="row">
+          <div class="six columns">
+            <div class="contenido-hero">
+              <h2>Aprende algo nuevo</h2>
+              <p>Todos los cursos a $15</p>
+              <form action="#" id="busqueda" method="post" class="formulario">
+                <input
+                  class="u-full-width"
+                  type="text"
+                  placeholder="¿Que te gustaría Aprender?"
+                  id="buscador"
+                />
+                <input
+                  type="submit"
+                  id="submit-buscador"
+                  class="submit-buscador"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="barra">
+      <div class="container">
+        <div class="row">
+          <div class="four columns icono icono1">
+            <p>
+              20,000 Cursos en línea <br />
+              Explora los temas más recientes
+            </p>
+          </div>
+          <div class="four columns icono icono2">
+            <p>
+              Instructores Expertos <br />
+              Aprende con distintos estilos
+            </p>
+          </div>
+          <div class="four columns icono icono3">
+            <p>
+              Acceso de por vida <br />
+              Aprende a tu ritmo
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="lista-cursos" class="container">
+      <h1 id="encabezado" class="encabezado">Cursos En Línea</h1>
+      <div class="row">
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso1.5962157c.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="1"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso2.78477ab5.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>Curso de Comida Vegetariana</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="2"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso3.c7bbb6ff.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>Guitarra para Principiantes</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="3"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+      </div>
+      <!--.row-->
+      <div class="row">
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso4.350d6658.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>Huerto en tu casa</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="4"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso5.b26b419b.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>Decoración con productos de tu hogar</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="5"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso1.5962157c.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>Diseño Web para Principiantes</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="6"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+      </div>
+      <!--.row-->
+      <div class="row">
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso2.78477ab5.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>Comida Mexicana para principiantes</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="7"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso3.c7bbb6ff.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>Estudio Musical en tu casa</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="8"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso4.350d6658.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>Cosecha tus propias frutas y verduras</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="9"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+      </div>
+      <!--.row-->
+      <div class="row">
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso5.b26b419b.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>Prepara galletas caseras</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="10"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso1.5962157c.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>JavaScript Moderno con ES6</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="11"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img src="/carrito-compras-js/assets/curso2.78477ab5.jpg" class="imagen-curso u-full-width" />
+            <div class="info-card">
+              <h4>100 Recetas de Comida Natural</h4>
+              <p>Juan Pedro</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAANCAYAAAA69Dm5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDQ5NDlBQjMyMjA2ODExODIyQUZFQTNGRTlDNDY0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY0NEFDOEU5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkY0NEFDN0U5MzcxMUU3OTBFOTg5NEM3NUQzRjlBOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTY3OTM4N0U3NzIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0OTQ5QUIzMjIwNjgxMTgyMkFGRUEzRkU5QzQ2NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz553HSWAAAB3UlEQVR42txXy42DMBBN6MAtmBJ83huUsC2EEkgJSQnQAiWE056XEkILlLBrozfS4NjYfBRWO9LICPCz53l+Pv98ZSePVFqL0zYptTZa+w0YnxibgzEkcO6Ttx+PcTh7iLwwIusNCz8xf8uBPDGmB2NU4CWdOAaITGY8iY9rvZEORa7EoLkSz0dh0NzWx0kys/Bpw+L2vHLjYfwVjBrh/eIYJrRNbCutAiM9kwxaOyg9txaOmUM5ImMewKVFSJC2wOPkZ2wfEiOXDnNpL62Vf/fAEJYNktmWA+/CbBhtM0RWC73OlfMop8ZKh00N1mE8rEOckwEY3c4YAhjK8X8O8hQj3HhrkSwsKL7CsaSguEicex9LwF4Yvvf2Oh2ILHTBqSlHxpAZIiuGzJChMUSEDN0DI/TdhPv3aLMm0S42IRKKSI9tZ75fI7yle+nVpnIPeMteGAP26yOy586XWPllTlRk6Kp/jCHZQSlf+2NP6lcsLq1E33s2ssSAwVGU3oUhHW0QL0TSRaRgbUqODj5noSoWLNwjFaTQeiGRkoUWYVBaeDcGpSzCaNChCI7Dr4ilp0ek3lAF8g7daYWncFGTfo2809aOfCqAEbq/74Fh5AaM3nNxGXSxGe/vvwIMAI+BrEDyvDrmAAAAAElFTkSuQmCC" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button-primary button input agregar-carrito"
+                data-id="12"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+      </div>
+      <!--.row-->
+    </div>
+
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="four columns">
+            <nav id="principal" class="menu">
+              <a class="enlace" href="#">Para tu Negocio</a>
+              <a class="enlace" href="#">Conviertete en Instructor</a>
+              <a class="enlace" href="#">Aplicaciones Móviles</a>
+              <a class="enlace" href="#">Soporte</a>
+              <a class="enlace" href="#">Temas</a>
+            </nav>
+          </div>
+          <div class="four columns">
+            <nav id="secundaria" class="menu">
+              <a class="enlace" href="#">¿Quienes Somos?</a>
+              <a class="enlace" href="#">Empleo</a>
+              <a class="enlace" href="#">Blog</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     
   </body>
 </html>
