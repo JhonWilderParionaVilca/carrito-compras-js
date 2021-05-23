@@ -1,3 +1,3 @@
 export default {
-  base: "/_template-vanilla-vite/",
+  base: "/carrito-compras-js/",
 };
