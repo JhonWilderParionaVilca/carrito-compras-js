@@ -2,12 +2,21 @@
 
 const $coursesList = document.getElementById("lista-cursos");
 const $cart = document.getElementById("carrito");
+const $listItemsCart = $cart.querySelector("table tbody");
+const $cleanCartBtn = document.getElementById("vaciar-carrito");
 
 let cartElements = [];
 
 (function loadListeners() {
   $coursesList.addEventListener("click", addShoppingCart);
+  $cleanCartBtn.addEventListener("click", cleanCart);
 })();
+
+function cleanCart(e) {
+  e.preventDefault();
+  cartElements = [];
+  cleanCartHtml($listItemsCart);
+}
 
 function addShoppingCart(e) {
   const btnClick = catchClickAddButton(e);
@@ -17,7 +26,6 @@ function addShoppingCart(e) {
   const dataProduct = getDataProduct(btnClick);
   const products = addProductCartElements(dataProduct, cartElements);
   cartElements = [...products];
-  const $listItemsCart = $cart.querySelector("table tbody");
   showItemsCart(cartElements, $listItemsCart);
 }
 
