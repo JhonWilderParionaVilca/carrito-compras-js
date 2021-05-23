@@ -2,7 +2,7 @@
 
 const $coursesList = document.getElementById("lista-cursos");
 const $cart = document.getElementById("carrito");
-const $listItemsCart = $cart.querySelector("table tbody");
+const $listItemsCart = $cart.querySelector("#lista-carrito tbody");
 const $cleanCartBtn = document.getElementById("vaciar-carrito");
 
 let cartElements = [];
