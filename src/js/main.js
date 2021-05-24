@@ -27,6 +27,7 @@ function addShoppingCart(e) {
   const products = addProductCartElements(dataProduct, cartElements);
   cartElements = [...products];
   showItemsCart(cartElements, $listItemsCart);
+  return;
 }
 
 function catchClickAddButton(event) {
@@ -39,9 +40,9 @@ function catchClickAddButton(event) {
 function getDataProduct(btnProduct) {
   const cardInfoProduct = btnProduct.parentElement.parentElement;
   const dataProduct = {
-    img: cardInfoProduct.querySelector("img").getAttribute("src"),
+    img: cardInfoProduct.querySelector("img").src,
     title: cardInfoProduct.querySelector("h4").textContent,
-    price: cardInfoProduct.querySelector("p span").textContent,
+    price: cardInfoProduct.querySelector(".precio span").textContent,
     id: btnProduct.getAttribute("data-id"),
     quantity: 1,
   };
@@ -73,13 +74,17 @@ function existProduct(id, products) {
 
 function showItemsCart(cartItems, $tbody) {
   cleanCartHtml($tbody);
+
   cartItems.forEach((item) => {
     const itemProduct = document.createElement("tr");
+    const { img, title, price, quantity, id } = item;
+
     itemProduct.innerHTML = `
-    <td><img src=${item.img} width="100"/></td>
-    <td>${item.title}</td>
-    <td>${item.price}</td>
-    <td>${item.quantity}</td>
+    <td><img src=${img} width="100"/></td>
+    <td>${title}</td>
+    <td>${price}</td>
+    <td>${quantity}</td>
+    <td><a href="#" class="borrar-curso" data-id=${id}>x</a></td>
   `;
     $tbody.appendChild(itemProduct);
   });
