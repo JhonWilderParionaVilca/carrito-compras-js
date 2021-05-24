@@ -1,21 +1,12 @@
-# VITE VANILLA
+<h1 align="center">Carrito de compras </h1>
+<p>🔶 Funcionalidad del carrito de compras vanilla js</p>
 
-Plantilla creada con vitejs
-
-## Creación
+## USO
 
 ```sh
-$ yarn create @vitejs/app
-# selecciona vanilla
-# selecciona javascript
+$ git clone https://github.com/wilderPariona/carrito-compras-js
+$ cd carrito-compras-js
+$ yarn install
+$ yarn dev
 ```
-
-## [Deploy con ghpages](https://github.com/JamesIves/github-pages-deploy-action/tree/dev)
-
-Por defecto se usa token, pero si quieres usar [ssh-key](https://github.com/JamesIves/github-pages-deploy-action/tree/dev#using-an-ssh-deploy-key-)
-
-En este ejemplo se deploya con token y con [yarn](https://github.com/actions/setup-node)
-
-## [Configurar vite para ghpages](https://vitejs.dev/guide/static-deploy.html#github-pages)
-
-Debemos configurar base en `vite.config.js` para que coincida con nuestra url de ghpages
+Abrir el navegador `http://localhost:3000/carrito-compras-js/`
