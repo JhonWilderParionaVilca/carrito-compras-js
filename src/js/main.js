@@ -10,6 +10,7 @@ let cartElements = [];
 (function loadListeners() {
   $coursesList.addEventListener("click", addShoppingCart);
   $cleanCartBtn.addEventListener("click", cleanCart);
+  $listItemsCart.addEventListener("click", removeItemCart);
 })();
 
 function cleanCart(e) {
@@ -19,7 +20,7 @@ function cleanCart(e) {
 }
 
 function addShoppingCart(e) {
-  const btnClick = catchClickAddButton(e);
+  const btnClick = catchClickAddButton(e, "agregar-carrito");
   if (!btnClick) {
     return;
   }
@@ -30,8 +31,8 @@ function addShoppingCart(e) {
   return;
 }
 
-function catchClickAddButton(event) {
-  if (event.target.classList.contains("agregar-carrito")) {
+function catchClickAddButton(event, className) {
+  if (event.target.classList.contains(className)) {
     event.preventDefault();
     return event.target;
   }
@@ -50,25 +51,23 @@ function getDataProduct(btnProduct) {
 }
 
 function addProductCartElements(dataProduct, cartElements) {
-  const products = [...cartElements];
+  let products = [...cartElements];
   const { id } = dataProduct;
   const hasProduct = existProduct(id, products);
   if (hasProduct) {
     products.forEach((product) => {
       if (product.id === id) {
-        product.quantity += 1;
+        product.quantity++;
       }
     });
   } else {
-    products.push(dataProduct);
+    products = [...products, dataProduct];
   }
   return products;
 }
 
 function existProduct(id, products) {
-  const hasProduct = products.some((product) => {
-    return product.id == id;
-  });
+  const hasProduct = products.some((product) => product.id === id);
   return hasProduct;
 }
 
@@ -94,4 +93,28 @@ function cleanCartHtml($tbody) {
   while ($tbody.firstChild) {
     $tbody.removeChild($tbody.firstChild);
   }
+}
+
+function removeItemCart(e) {
+  const btnRemoveReference = catchClickAddButton(e, "borrar-curso");
+  if (!btnRemoveReference) {
+    return;
+  }
+  const productId = btnRemoveReference.getAttribute("data-id");
+  decreaseQuantity(cartElements, productId);
+  showItemsCart(cartElements, $listItemsCart);
+  return;
+}
+
+function decreaseQuantity(products, idProduct) {
+  products.filter((product, index) => {
+    if (product.id === idProduct) {
+      if (product.quantity > 1) {
+        product.quantity--;
+      } else {
+        products.splice(index, 1);
+      }
+    }
+    return product;
+  });
 }
