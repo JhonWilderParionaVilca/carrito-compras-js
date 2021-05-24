@@ -17,6 +17,7 @@ function cleanCart(e) {
   e.preventDefault();
   cartElements = [];
   cleanCartHtml($listItemsCart);
+  return;
 }
 
 function addShoppingCart(e) {
@@ -36,6 +37,7 @@ function catchClickAddButton(event, className) {
     event.preventDefault();
     return event.target;
   }
+  return;
 }
 
 function getDataProduct(btnProduct) {
@@ -87,12 +89,14 @@ function showItemsCart(cartItems, $tbody) {
   `;
     $tbody.appendChild(itemProduct);
   });
+  return;
 }
 
 function cleanCartHtml($tbody) {
   while ($tbody.firstChild) {
     $tbody.removeChild($tbody.firstChild);
   }
+  return;
 }
 
 function removeItemCart(e) {
@@ -117,4 +121,5 @@ function decreaseQuantity(products, idProduct) {
     }
     return product;
   });
+  return;
 }
